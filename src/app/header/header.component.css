@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+/* Estilos locales del header */
+.simple-header {
+
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    font-size: 1.8rem; /* Tamaño de texto amigable */
+    font-weight: bold;
+    width: 80%; /* Ahora es más ancho */
+    max-width: 800px; /* Máximo ancho para evitar que sea demasiado grande */
+
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+

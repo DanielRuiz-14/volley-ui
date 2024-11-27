@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+h1, h2{
+    font-family: 'Poppins', sans-serif; /* Fuente moderna */
+}
+
+.gradient{
+    background: linear-gradient(90deg, #4CAF50, #2196F3); /* Degradado verde a azul */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    margin: 20px auto; /* Centrado horizontal */
+    padding: 20px 60px; /* Ajustado para hacerlo más amplio */
+}

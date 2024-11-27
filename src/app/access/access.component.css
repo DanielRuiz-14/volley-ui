@@ -1,0 +1,11 @@
+.main-box{
+    color: #fff; /* Texto blanco */
+    text-align: center;
+    max-width: 800px;
+}
+
+.text-form{
+    margin: 10px;
+    color: blue;
+}
+
