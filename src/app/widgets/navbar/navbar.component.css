@@ -1,0 +1,29 @@
+.navbar {
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+  
+      mat-icon {
+        font-size: 1.5rem;
+      }
+    }
+  
+    .nav-link {
+      color: white !important;
+      font-weight: bold;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  
+    .navbar-toggler {
+      border: none;
+      color: white;
+  
+      mat-icon {
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
