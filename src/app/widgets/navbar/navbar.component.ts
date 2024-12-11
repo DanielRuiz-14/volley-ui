@@ -17,12 +17,4 @@ export class NavbarComponent {
   constructor (private router: Router){
   }
   
-    logout(){
-      console.log('Loggin out');
-      this.router.navigate(['/login']);
-    }
-
-    log(){
-      console.log('Clic');
-    }
 }

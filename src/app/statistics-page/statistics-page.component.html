@@ -1,2 +1,16 @@
 <app-navbar></app-navbar>
-<p>statistics-page works!</p>
+
+<!-- Filter div -->
+<div class="container mt-4">
+    <h2 class="mb-3">Filtro por Nombre</h2>
+      <mat-label>Buscar por nombre</mat-label>
+      <select [(ngModel)] ="selectedName" class="form-select">
+        <option *ngFor="let name of playersNames" [value]='name'>
+            {{ name }}
+        </option>
+      </select>
+
+      <p class="mt-3" *ngIf="selectedName">
+        Has seleccionado: <strong>{{ selectedName }}</strong>
+      </p>
+  </div>  
