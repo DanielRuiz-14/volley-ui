@@ -1,29 +1,21 @@
 .navbar {
-    .navbar-brand {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-  
-      mat-icon {
-        font-size: 1.5rem;
-      }
-    }
-  
-    .nav-link {
-      color: white !important;
-      font-weight: bold;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  
-    .navbar-toggler {
-      border: none;
-      color: white;
-  
-      mat-icon {
-        font-size: 1.5rem;
-      }
-    }
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 16px; /* Espacio entre las rutas */
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a.active {
+  font-weight: bold;
+  border-bottom: 2px solid white; /* Indicador para la ruta activa */
+}
