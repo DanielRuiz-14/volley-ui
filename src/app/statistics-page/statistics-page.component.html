@@ -4,13 +4,19 @@
 <div class="container mt-4">
     <h2 class="mb-3">Filtro por Nombre</h2>
       <mat-label>Buscar por nombre</mat-label>
-      <select [(ngModel)] ="selectedName" class="form-select">
-        <option *ngFor="let name of playersNames" [value]='name'>
-            {{ name }}
+      <select [(ngModel)] ="selectedPlayer" class="form-select" (change)="onSelectChange()">
+        <option [ngValue]="undefined" disabled selected>Selecciona un jugador</option>
+        <option *ngFor="let player of players" [ngValue]='player'>
+            {{ player.firstName }}
         </option>
       </select>
 
-      <p class="mt-3" *ngIf="selectedName">
-        Has seleccionado: <strong>{{ selectedName }}</strong>
+      <p class="mt-3" *ngIf="selectedPlayer">
+        Has seleccionado: <strong>{{ selectedPlayer.firstName }}</strong>
+      </p>
+
+
+      <p>
+        {{ playerBasicStats }}
       </p>
   </div>  

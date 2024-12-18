@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Player } from '../../models/player.model';
 
 @Injectable({
@@ -14,12 +14,10 @@ export class PlayersService {
 
   constructor(private http: HttpClient) { }
 
-  // TODO: Update this to load some players while writing the name (when we have hundreds or thousands of player)
+  // TODO: Update this to load some players while writing the name (when we have hundreds or thousands of players)
   // we won't want to load all the players
-  getAllNames(): Observable<string[]>{
-    return this.http.get<Player[]>(this.PLAYER_SERVICE_URL + this.GET_ALL_PATH).pipe(
-      map((players) => players.map((player) => player.firstName))
-    );
+  getAllNames(): Observable<Player[]>{
+    return this.http.get<Player[]>(this.PLAYER_SERVICE_URL + this.GET_ALL_PATH);
   }
 
 }

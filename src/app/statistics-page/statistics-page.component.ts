@@ -3,6 +3,9 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field'; // Form Field de Angular Material
 import { MatInputModule } from '@angular/material/input'; // Input de Angular Material
+import { GeneralStats } from '../models/GeneralStats.model';
+import { Player } from '../models/player.model';
+import { BasicStatsService } from '../services/basic-stats/basic-stats.service';
 import { PlayersService } from '../services/player/players.service';
 import { NavbarComponent } from "../widgets/navbar/navbar.component";
 
@@ -19,10 +22,11 @@ import { NavbarComponent } from "../widgets/navbar/navbar.component";
 })
 export class StatisticsPageComponent {
 
-  playersNames: string[] = [];
-  selectedName: string | null = null;
+  players: Player[] = [];
+  selectedPlayer?: Player;
+  playerBasicStats: GeneralStats | null = null;
 
-  constructor(private playerService: PlayersService){}
+  constructor(private playerService: PlayersService, private basicStatsService: BasicStatsService){}
 
   ngOnInit(): void {
     this.loadNameFilter();
@@ -31,10 +35,22 @@ export class StatisticsPageComponent {
   loadNameFilter(): void {
     this.playerService.getAllNames().subscribe(
       {
-        next: (res) => this.playersNames = res,
+        next: (res) => this.players = res,
         error: (err) => console.error('Error when loading players names', err),
       }
     ); 
+  }
+
+  onSelectChange(): void{
+    if(this.selectedPlayer){
+      console.log(this.selectedPlayer.firstName);
+      this.basicStatsService.getBasicStatsBy(this.selectedPlayer.id).subscribe(
+        {
+          next: (data) => this.playerBasicStats = data,
+          error: (err) => console.error('Error when getting stats from player', err),
+        }
+      );
+    }
   }
   }
 
