@@ -1,7 +1,7 @@
 export const environment = {
     production: true,
     backends: {
-        players: 'volleyball-service.railway.internal', // Players backend
-        statistics: 'volleyball-statistics.railway.internal', // statistics backend
+        players: 'https://volleyball-service.railway.internal', // Players backend
+        statistics: 'https://volleyball-statistics.railway.internal', // statistics backend
     },
 };
