@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
+    "build-prod": "ng build --prod",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -25,7 +26,7 @@
     "@angular/ssr": "^19.0.1",
     "bootstrap": "^5.3.3",
     "chart.js": "^4.4.7",
-    "express": "^4.18.2",
+    "express": "^4.21.2",
     "ng2-charts": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
