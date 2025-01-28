@@ -61,6 +61,24 @@ if (isMainModule(import.meta.url)) {
   });
 }
 
+app.use('/**', (req, res, next) => {
+  angularApp
+    .handle(req)
+    .then((response) => {
+      if (response) {
+        if (response.status === 302 && response.headers.get('Location')) {
+          res.redirect(response.headers.get('Location')!);
+        } else {
+          writeResponseToNodeResponse(response, res);
+        }
+      } else {
+        next();
+      }
+    })
+    .catch(next);
+});
+
+
 /**
  * The request handler used by the Angular CLI (dev-server and during build).
  */
