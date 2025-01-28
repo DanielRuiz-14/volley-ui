@@ -57,7 +57,7 @@ if (isMainModule(import.meta.url)) {
   const port = process.env['PORT'] || 4000;
   app.listen(port, () => {
     const host = process.env['RAILWAY_STATIC_URL'] || `http://localhost:${port}`;
-    console.log(`Node Express server listening on ${host}`);
+    console.log(`Node Express server listening on ${host} with port ${port}`);
   });
 }
 
