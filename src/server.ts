@@ -61,6 +61,10 @@ if (isMainModule(import.meta.url)) {
   });
 }
 
+app.get('/', (req, res) => {
+  res.redirect('/login');
+});
+
 app.use('/**', (req, res, next) => {
   angularApp
     .handle(req)

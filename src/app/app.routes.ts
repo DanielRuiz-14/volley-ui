@@ -6,7 +6,6 @@ import { StatisticsPageComponent } from './statistics-page/statistics-page.compo
 export const routes: Routes = [
     { path: 'home', component: MainPageComponent },
     { path: 'login', component: AccessComponent },
-    { path: 'statistics', component: StatisticsPageComponent },
-    { path: '', redirectTo: '/login', pathMatch: 'full' }
+    { path: 'statistics', component: StatisticsPageComponent }
 
 ];
