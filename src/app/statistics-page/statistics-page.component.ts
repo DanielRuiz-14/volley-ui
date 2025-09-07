@@ -7,11 +7,11 @@ import { GeneralStats } from '../models/generalStats.model';
 import { Player } from '../models/player.model';
 import { BasicStatsService } from '../services/basic-stats/basic-stats.service';
 import { PlayersService } from '../services/player/players.service';
-import { NavbarComponent } from "../widgets/navbar/navbar.component";
+
 
 @Component({
   selector: 'app-statistics-page',
-  imports: [NavbarComponent,
+  imports: [
     FormsModule,
     MatInputModule,
     MatFormFieldModule,

@@ -1,0 +1,33 @@
+<div class="results-layout">
+    <!-- Barra lateral izquierda -->
+    <aside class="sidebar left">
+        <h3>Filtros</h3>
+        <label for="category-filter">Categoría:</label>
+        <select id="category-filter" name="category-filter" [(ngModel)]="selectedCategory">
+            <option value="">Todas</option>
+            <option *ngFor="let category of categories" [value]="category.value">
+                {{ category.label }}
+            </option>
+        </select>
+    </aside>
+
+    <!-- Contenido central -->
+    <main class="content">
+        <h1>Resultados</h1>
+
+        <div *ngFor="let result of results" class="match-card">
+            <div class="teams">
+                <span class="home">{{ result.home }}</span>
+                <span class="score">{{ result.homeScore }} - {{ result.awayScore }}</span>
+                <span class="away">{{ result.away }}</span>
+            </div>
+            <div class="date">{{ result.date }}</div>
+        </div>
+    </main>
+
+    <!-- Barra lateral derecha -->
+    <aside class="sidebar right">
+        <h3>Extras</h3>
+        <p>(aquí pondrás lo que quieras)</p>
+    </aside>
+</div>
